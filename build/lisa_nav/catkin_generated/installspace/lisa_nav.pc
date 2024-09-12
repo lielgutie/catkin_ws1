@@ -1,0 +1,8 @@
+prefix=/home/lisa-dev/catkin_ws/install
+
+Name: lisa_nav
+Description: Description of lisa_nav
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

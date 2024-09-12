@@ -1,0 +1,26 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+  <arg name="map_file" default="$(find lisa_nav)/maps/pldt.yaml"/>
+
+  <!-- LISA Robot -->
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find lisa_nav)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find lisa_nav)/launch/move_base.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find lisa_nav)/rviz/lisa_nav.rviz"/>
+  </group>
+  
+</launch>

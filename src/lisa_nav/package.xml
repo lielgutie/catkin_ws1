@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lisa_nav</name>
+  <version>1.0.0</version>
+  <description> The lisa_nav provides roslaunch scripts for starting the navigation.</description>
+  
+  <license>MIT</license>
+  
+  <maintainer email="sherwinjohn.dignadice.eng@ust.edu.ph">Sherwin</maintainer>
+  <url type="website">filrobotics.com</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>amcl</exec_depend>
+  <exec_depend>map_server</exec_depend>
+  <exec_depend>move_base</exec_depend>
+</package>
